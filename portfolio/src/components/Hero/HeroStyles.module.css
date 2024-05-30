@@ -78,7 +78,7 @@ button:active {
 }
 
 
-/* @media (width >= 800px) {
+ @media (width >= 800px) {
   .container {
     flex-direction: row-reverse;
     align-items: center;
@@ -98,4 +98,5 @@ button:active {
       width: 400px;
     }
   }
-} */
+} 
+

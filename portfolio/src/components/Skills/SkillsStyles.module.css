@@ -31,7 +31,7 @@ hr {
   margin: 30px auto;
 }
 
-/* 
+
 @media (width >= 800px) {
   .skillList {
     max-width: fit-content;
@@ -45,4 +45,4 @@ hr {
   hr {
     width: 300px;
   }
-} */
+}
