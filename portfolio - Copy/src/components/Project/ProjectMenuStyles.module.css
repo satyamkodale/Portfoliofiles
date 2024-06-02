@@ -1,0 +1,126 @@
+.projectMenu {
+  width: 45rem;
+  position: fixed;
+  display: flex;
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 40px;
+}
+
+.projectItemsContainer {
+  flex-direction: column;
+  display: flex;
+  position: relative;
+  width: 40%;
+  margin-top: 12rem;
+  align-items: flex-end;
+}
+
+.projectItem {
+  height: 3.75rem;
+  width: 90%;
+  display: flex;
+  position: relative;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+}
+
+.projectItem.activeProject .title {
+  font-size: 1.5rem;
+}
+
+.activeProject {
+  border-radius: var(--radius-left);
+  cursor: default;
+}
+
+.projectItem.activeProject:nth-child(1) {
+  background: linear-gradient(270deg, #ffffff00, var(--purple) 70%);
+}
+.projectItem.activeProject:nth-child(2) {
+  background: linear-gradient(270deg, #ffffff00, var(--blue) 70%);
+}
+.projectItem.activeProject:nth-child(3) {
+  background: linear-gradient(270deg, #ffffff00, var(--cyan) 70%);
+}
+
+.projectSubContainer {
+  width: 60%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+.projectSubContainer h3 {
+  position: relative;
+  margin: 0;
+}
+.projectSubContainer img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 0.5rem 3rem 0.5rem 0.5rem;
+  opacity: 0.9;
+}
+.projectSubContainer p {
+  font-size: 0.875rem;
+}
+
+.linkContainer a {
+  color: white;
+  text-decoration: none;
+  margin-top: 1rem;
+  width: 50%;
+  height: 2.75rem;
+  text-align: center;
+}
+
+.linkContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+@media (max-width: 1100px) {
+  .projectMenu {
+    width: 28rem;
+    top: 20%;
+    transform: translateX(-50%);
+  }
+  .projectItem {
+    height: 2rem;
+    width: 100%;
+  }
+  .projectItem.activeProject .title {
+    font-size: 1rem;
+  }
+  .title {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .projectMenu {
+    width: 28rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .projectMenu p {
+    font-size: 0.7rem;
+  }
+  .projectSubContainer {
+    margin-top: 1rem;
+    width: 12rem;
+  }
+  .projectSubContainer img {
+    width: 12rem;
+  }
+  .linkContainer a {
+    margin-top: 0.5rem;
+    width: 50%;
+    height: 2rem;
+  }
+  .projectItemsContainer {
+    margin-top: 0;
+  }
+}
