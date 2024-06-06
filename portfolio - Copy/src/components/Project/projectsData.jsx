@@ -9,8 +9,8 @@ const projects = {
     description: (
       <>
         <p>
-          ElectroEase: A platform for electronics retailers, streamlining
-          product showcasing and sales interactions.
+          - A platform for electronics retailers, streamlining product
+          showcasing and sales interactions.
         </p>
       </>
     ),
@@ -23,8 +23,8 @@ const projects = {
     description: (
       <>
         <p>
-          QuizQuest: A platform for interactive quizzes, enhancing engagement
-          and knowledge retention.
+          - A platform for interactive quizzes, enhancing engagement and
+          knowledge retention.
         </p>
       </>
     ),
@@ -37,8 +37,8 @@ const projects = {
     description: (
       <>
         <p>
-          FashionFusion: An online hub for fashion enthusiasts, fostering
-          creativity and style exploration.
+          - An online hub for fashion enthusiasts, fostering creativity and
+          style exploration.
         </p>
       </>
     ),

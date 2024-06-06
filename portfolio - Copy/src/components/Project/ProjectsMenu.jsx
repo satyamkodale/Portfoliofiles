@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import classNames from "classnames"; // Import classNames library
 import projects from "./projectsData";
 import styles from "./ProjectMenuStyles.module.css"; // Import module CSS file
+import { useTheme } from "../../common/ThemeContext";
 
 const ProjectsMenu = () => {
   const [activeProject, setActiveProject] = useState(1);
@@ -9,7 +10,7 @@ const ProjectsMenu = () => {
   const handleProjectClick = (project) => {
     setActiveProject(project);
   };
-
+  const { theme, toggleTheme } = useTheme();
   const renderContent = (projects) => {
     return projects.map((project, index) => (
       <div key={index} className={styles[`projectSubContainer-${index + 1}`]}>
@@ -21,10 +22,20 @@ const ProjectsMenu = () => {
         <div className={styles.linkContainer}>
           {" "}
           {/* Use module CSS class */}
-          <a href={project.github} target="_blank" rel="noopener noreferrer">
+          <a
+            href={project.github}
+            style={{ color: theme === "light" ? "black" : "white" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             GITHUB
           </a>
-          <a href={project.demo} target="_blank" rel="noopener noreferrer">
+          <a
+            href={project.demo}
+            style={{ color: theme === "light" ? "black" : "white" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             DEMO
           </a>
         </div>

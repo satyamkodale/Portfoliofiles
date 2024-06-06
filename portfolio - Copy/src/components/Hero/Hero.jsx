@@ -24,7 +24,7 @@ import AboutSubheading from "./AboutSubheading";
 import CV from "../../assets/cv.pdf";
 import { useTheme } from "../../common/ThemeContext";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import personalIconLight from "../../assets/moebius-triangle.png";
 import educationIconLight from "../../assets/upgrade.png";
 import careerIconLight from "../../assets/triple-corn.png";
@@ -78,6 +78,28 @@ export default function Hero() {
 
   const subheadings = subheadingsData[activeMenuItem];
 
+  const titles = [
+    "Full Stack Developer",
+    "Programmer",
+    "Backend Enthusiastic",
+    "Problem Solver",
+  ];
+  const [titleIndex, setTitleIndex] = useState(0);
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    const typingTimeout = setTimeout(() => setIsTyping(false), 2000); // Typing animation duration
+    const changeTitleTimeout = setTimeout(() => {
+      setTitleIndex((prevIndex) => (prevIndex + 1) % titles.length);
+      setIsTyping(true);
+    }, 3000); // Total duration of animation and pause
+
+    return () => {
+      clearTimeout(typingTimeout);
+      clearTimeout(changeTitleTimeout);
+    };
+  }, [titleIndex]);
+
   return (
     <section id="hero" className={styles.outer}>
       <div className={styles.container1}>
@@ -85,7 +107,7 @@ export default function Hero() {
           <img
             src={heroImg}
             className={styles.heroImg}
-            alt="Profile picture of Harris Johnsen"
+            alt="Profile picture of Satyam "
           />
           <img
             className={styles.colorMode}
@@ -100,10 +122,12 @@ export default function Hero() {
             <br />
             Kodale
           </h1>
-          <h2 className={styles.h2hero}>Full Stack Developer</h2>
+          <h2 className={`${styles.h2hero} ${isTyping ? styles.typing : ""}`}>
+            {titles[titleIndex]}
+          </h2>
 
           <span>
-            <a href="https://linkedin.com/" target="_blank">
+            <a href="mailto:satyamkodale@gmail.com" target="_blank">
               <img
                 src={emailIcon}
                 className={styles.spanImg}
@@ -111,28 +135,34 @@ export default function Hero() {
                 alt="Linkedin icon"
               />
             </a>
-            <a href="https://twitter.com/" target="_blank">
+            <a
+              href="https://x.com/VIPERSATYAMx?t=nUkPKMQEdDszc3ajHUXBgQ&s=08"
+              target="_blank"
+            >
               <img
                 src={twitterIcon}
                 className={styles.spanImg}
                 alt="Twitter icon"
               />
             </a>
-            <a href="https://github.com/" target="_blank">
+            <a href="https://github.com/satyamkodale" target="_blank">
               <img
                 src={githubIcon}
                 className={styles.spanImg}
                 alt="Github icon"
               />
             </a>
-            <a href="https://linkedin.com/" target="_blank">
+            <a
+              href="https://www.linkedin.com/in/satyam-kodale-78475a227"
+              target="_blank"
+            >
               <img
                 src={linkedinIcon}
                 className={styles.spanImg}
                 alt="Linkedin icon"
               />
             </a>
-            <a href="https://linkedin.com/" target="_blank">
+            <a href="https://leetcode.com/satyamkodale24" target="_blank">
               <img
                 src={leetcodeIcon}
                 className={styles.spanImg}
@@ -141,7 +171,10 @@ export default function Hero() {
               />
             </a>
           </span>
-          <a href={CV} download>
+          <a
+            href="https://drive.google.com/file/d/1f1482MpX690RCvgsFUO1AoyIVUBwLdMD/view"
+            download
+          >
             <button className="hover">Resume</button>
           </a>
           {/* <p className={styles.description}>
